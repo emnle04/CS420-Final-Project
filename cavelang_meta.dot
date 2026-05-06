@@ -1,0 +1,87 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+1539082419376[ label="{Program|}"]
+
+1539082965456[ label="{*Statement|}"]
+
+1539082967056[ label="{Assignment|name: ID\l}"]
+
+1539082631808[ label="{Input|name: ID\l}"]
+
+1539082630592[ label="{Output|}"]
+
+1539082678304[ label="{IfStmt|}"]
+
+1539082436176[ label="{WhileStmt|}"]
+
+1539082432848[ label="{Condition|op: CompOp\lbool_op: STRING\l}"]
+
+1539083026752[ label="{*Expr|}"]
+
+1539082385040[ label="{PrefixOp|op: STRING\l}"]
+
+1539082383472[ label="{HelperCall|name: STRING\l}"]
+
+1539082579408[ label="{Number|value: INT\l}"]
+
+1539082363216[ label="{Boolean|value: STRING\l}"]
+
+1539082363024[ label="{VarRef|name: ID\l}"]
+
+1539083251824[ label="{String|value: STRING\l}"]
+
+
+
+1539082419376 -> 1539082965456[arrowtail=diamond, dir=both, headlabel="statements 0..*"]
+1539082965456 -> 1539082967056 [dir=back]
+1539082965456 -> 1539082631808 [dir=back]
+1539082965456 -> 1539082630592 [dir=back]
+1539082965456 -> 1539082678304 [dir=back]
+1539082965456 -> 1539082436176 [dir=back]
+1539082967056 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="value "]
+1539082630592 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="parts 1..*"]
+1539082678304 -> 1539082432848[arrowtail=diamond, dir=both, headlabel="condition "]
+1539082678304 -> 1539082965456[arrowtail=diamond, dir=both, headlabel="then_block 0..*"]
+1539082678304 -> 1539082965456[arrowtail=diamond, dir=both, headlabel="else_block 0..*"]
+1539082436176 -> 1539082432848[arrowtail=diamond, dir=both, headlabel="condition "]
+1539082436176 -> 1539082965456[arrowtail=diamond, dir=both, headlabel="body 0..*"]
+1539082432848 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="left "]
+1539082432848 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="right "]
+1539082432848 -> 1539082432848[arrowtail=diamond, dir=both, headlabel="right_cond "]
+1539083026752 -> 1539082385040 [dir=back]
+1539083026752 -> 1539082383472 [dir=back]
+1539083026752 -> 1539082579408 [dir=back]
+1539083026752 -> 1539082363216 [dir=back]
+1539083026752 -> 1539083251824 [dir=back]
+1539083026752 -> 1539082363024 [dir=back]
+1539082385040 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="left "]
+1539082385040 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="right "]
+1539082383472 -> 1539083026752[arrowtail=diamond, dir=both, headlabel="expr "]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>Break</b></td><td>stop</td>
+	</tr>
+	<tr>
+		<td><b>Comment</b></td><td>\/\/.*</td>
+	</tr>
+	<tr>
+		<td><b>CompOp</b></td><td>same|different|bigger|smaller|at_least|at_most</td>
+	</tr>
+	<tr>
+		<td><b>Continue</b></td><td>next</td>
+	</tr>
+</table> >]
+
+
+}

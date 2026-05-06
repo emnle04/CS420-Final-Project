@@ -1,0 +1,16 @@
+make i 1
+
+say "You can use string literals for comparison:"
+repeat i at_most 5
+    say i
+    make i add i 1
+done
+
+make i 1
+
+say "Or you can use mathematical symbols:"
+repeat i <= 5
+    say i
+    make i add i 1
+done
+// There's also comment support

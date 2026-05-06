@@ -1,0 +1,19 @@
+make i 1
+
+repeat i at_most 100
+    when leftover i 15 same 0
+        say "FizzBuzz"
+    else
+        when leftover i 3 same 0
+            say "Fizz"
+        else
+            when leftover i 5 same 0
+                say "Buzz"
+            else
+                say i
+            done
+        done
+    done
+
+    make i add i 1
+done

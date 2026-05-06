@@ -1,0 +1,112 @@
+Program:
+    statements*=Statement
+;
+
+Statement:
+      Assignment
+    | Output
+    | Input
+    | IfStmt
+    | WhileStmt
+    | Break
+    | Continue
+;
+
+Assignment:
+    'make' name=ID value=Expression
+;
+
+Input:
+    'listen' name=ID
+;
+
+Output:
+    'say' value=Expression
+;
+
+Break:
+    keyword='break'
+;
+
+Continue:
+    keyword='continue'
+;
+
+Expression:
+      PrefixOp
+    | HelperFunc
+    | Number
+    | String
+    | Var
+;
+
+PrefixOp:
+    op=Op left=Expression right=Expression
+;
+
+Op:
+      'add'
+    | 'take'
+    | 'smash'
+    | 'split'
+    | 'leftover'
+;
+
+HelperFunc:
+    name=HelperName '(' expr=Expression ')'
+;
+
+HelperName:
+      'to_num'
+    | 'to_word'
+;
+
+Number:
+    value=INT
+;
+
+String:
+    value=STRING
+;
+
+Var:
+    name=ID
+;
+
+IfStmt:
+    'when' condition=Condition
+    then_statements*=Statement
+    ('else' else_statements*=Statement)?
+    'done'
+;
+
+WhileStmt:
+    'repeat' condition=Condition
+    body_statements*=Statement
+    'done'
+;
+
+Condition:
+    left=Expression op=CondOp right=Expression
+    (bool_op=BoolOp right_cond=Condition)?
+;
+
+CondOp:
+      '=='
+    | '!='
+    | '>='
+    | '<='
+    | '>'
+    | '<'
+    | 'same'
+    | 'different'
+    | 'bigger'
+    | 'smaller'
+    | 'at_least'
+    | 'at_most'
+;
+
+BoolOp:
+      'and'
+    | 'or'
+;

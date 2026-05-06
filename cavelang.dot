@@ -1,0 +1,64 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+2347219246048[ label="{Program|}"]
+
+2347219454224[ label="{*Statement|}"]
+
+2347219454544[ label="{Assignment|name: ID\l}"]
+
+2347216076000[ label="{Print|}"]
+
+2347219328208[ label="{IfStmt|}"]
+
+2347219273488[ label="{WhileStmt|}"]
+
+2347216759504[ label="{Expr|op: optional\<list[AddOp]\>\l}"]
+
+2347216761136[ label="{Term|op: optional\<list[MulOp]\>\l}"]
+
+2347219082832[ label="{Factor|value: INT\lname: ID\l}"]
+
+
+
+2347219246048 -> 2347219454224[arrowtail=diamond, dir=both, headlabel="statements 0..*"]
+2347219454224 -> 2347219454544 [dir=back]
+2347219454224 -> 2347216076000 [dir=back]
+2347219454224 -> 2347219328208 [dir=back]
+2347219454224 -> 2347219273488 [dir=back]
+2347219454544 -> 2347216759504[arrowtail=diamond, dir=both, headlabel="value "]
+2347216076000 -> 2347216759504[arrowtail=diamond, dir=both, headlabel="expr "]
+2347219328208 -> 2347216759504[arrowtail=diamond, dir=both, headlabel="condition "]
+2347219328208 -> 2347219454224[arrowtail=diamond, dir=both, headlabel="then_block 0..*"]
+2347219328208 -> 2347219454224[arrowtail=diamond, dir=both, headlabel="else_block 0..*"]
+2347219273488 -> 2347216759504[arrowtail=diamond, dir=both, headlabel="condition "]
+2347219273488 -> 2347219454224[arrowtail=diamond, dir=both, headlabel="body 0..*"]
+2347216759504 -> 2347216761136[arrowtail=diamond, dir=both, headlabel="left "]
+2347216759504 -> 2347216761136[arrowtail=diamond, dir=both, headlabel="right 0..*"]
+2347216761136 -> 2347219082832[arrowtail=diamond, dir=both, headlabel="left "]
+2347216761136 -> 2347219082832[arrowtail=diamond, dir=both, headlabel="right 0..*"]
+2347219082832 -> 2347216759504[arrowtail=diamond, dir=both, headlabel="expr "]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>AddOp</b></td><td>plus|minus</td>
+	</tr>
+	<tr>
+		<td><b>Comment</b></td><td>\/\/.*$</td>
+	</tr>
+	<tr>
+		<td><b>MulOp</b></td><td>times|div</td>
+	</tr>
+</table> >]
+
+
+}

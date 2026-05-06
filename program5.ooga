@@ -1,0 +1,21 @@
+make secret 7
+make tries 0
+
+say "Guess a number between 1 and 10:"
+
+repeat 1 same 1
+    listen guess
+    make tries add tries 1
+
+    when guess same secret
+        say "Correct!"
+        say add "Tries: " tries
+        break
+    else
+        when guess bigger secret
+            say "Guess is too high."
+        else
+            say "Guess is too low."
+        done
+    done
+done

@@ -1,0 +1,10 @@
+make a 10
+make b 5
+say add "a = " a
+say add "b = " b
+
+say add "a + b = " add a b
+say add "a - b = " take a b
+say add "a * b = " smash a b
+say add "a / b = " split a b
+say add "a % b = " leftover a b

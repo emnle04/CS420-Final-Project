@@ -1,0 +1,66 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+1539082417024 -> 1539082419712 [label="statements:0" arrowtail=diamond dir=both]
+1539082419712 -> 1539082416688 [label="parts:0" arrowtail=diamond dir=both]
+1539082416688[label="{:String|+value:str='Hello cave!'\l}"]
+1539082419712 -> 1539082418704 [label="parts:1" arrowtail=diamond dir=both]
+1539082418704[label="{make:VarRef|}"]
+1539082419712 -> 1539082969296 [label="parts:2" arrowtail=diamond dir=both]
+1539082969296[label="{rock:VarRef|}"]
+1539082419712 -> 1539082414672 [label="parts:3" arrowtail=diamond dir=both]
+1539082414672[label="{:Number|+value:int=5\l}"]
+1539082419712 -> 1539082969616 [label="parts:4" arrowtail=diamond dir=both]
+1539082969616[label="{grunt:VarRef|}"]
+1539082419712 -> 1539082411984 [label="parts:5" arrowtail=diamond dir=both]
+1539082411984[label="{:PrefixOp|+op:str='add'\l}"]
+1539082419712 -> 1539082969936 [label="parts:6" arrowtail=diamond dir=both]
+1539082969936[label="{:String|+value:str='Number of rocks: '\l}"]
+1539082419712 -> 1539083075088 [label="parts:7" arrowtail=diamond dir=both]
+1539083075088[label="{rock:VarRef|}"]
+1539082419712 -> 1539083074784 [label="parts:8" arrowtail=diamond dir=both]
+1539083074784[label="{make:VarRef|}"]
+1539082419712 -> 1539082468912 [label="parts:9" arrowtail=diamond dir=both]
+1539082468912[label="{stick:VarRef|}"]
+1539082419712 -> 1539082970256 [label="parts:10" arrowtail=diamond dir=both]
+1539082970256[label="{:Number|+value:int=3\l}"]
+1539082419712 -> 1539082679936 [label="parts:11" arrowtail=diamond dir=both]
+1539082679936[label="{grunt:VarRef|}"]
+1539082419712 -> 1539082970576 [label="parts:12" arrowtail=diamond dir=both]
+1539082970576[label="{:PrefixOp|+op:str='add'\l}"]
+1539082419712 -> 1539082970896 [label="parts:13" arrowtail=diamond dir=both]
+1539082970896[label="{:String|+value:str='Number of sticks: '\l}"]
+1539082419712 -> 1539082678848 [label="parts:14" arrowtail=diamond dir=both]
+1539082678848[label="{stick:VarRef|}"]
+1539082419712 -> 1539082435408 [label="parts:15" arrowtail=diamond dir=both]
+1539082435408[label="{make:VarRef|}"]
+1539082419712 -> 1539082435664 [label="parts:16" arrowtail=diamond dir=both]
+1539082435664[label="{club:VarRef|}"]
+1539082419712 -> 1539082971216 [label="parts:17" arrowtail=diamond dir=both]
+1539082971216[label="{:PrefixOp|+op:str='add'\l}"]
+1539082419712 -> 1539083029152 [label="parts:18" arrowtail=diamond dir=both]
+1539083029152[label="{rock:VarRef|}"]
+1539082419712 -> 1539083029392 [label="parts:19" arrowtail=diamond dir=both]
+1539083029392[label="{stick:VarRef|}"]
+1539082419712 -> 1539083616560 [label="parts:20" arrowtail=diamond dir=both]
+1539083616560[label="{grunt:VarRef|}"]
+1539082419712 -> 1539083074480 [label="parts:21" arrowtail=diamond dir=both]
+1539083074480[label="{:PrefixOp|+op:str='add'\l}"]
+1539082419712 -> 1539083074176 [label="parts:22" arrowtail=diamond dir=both]
+1539083074176[label="{:String|+value:str='Number of clubs: '\l}"]
+1539082419712 -> 1539083617008 [label="parts:23" arrowtail=diamond dir=both]
+1539083617008[label="{club:VarRef|}"]
+1539082419712[label="{:Output|}"]
+1539082417024[label="{:Program|}"]
+
+}
