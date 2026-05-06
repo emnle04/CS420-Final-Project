@@ -4,12 +4,12 @@ Simplified Python-like programming language based on caveman speak. Requires Pyt
 ```
 git clone https://github.com/emnle04/CS420-Final-Project.git
 ```
-## Hello World
+## hello_world.ooga
 ```
 say "Hello, world!"
 ```
 ## Usage
-To run a program:
+To run a program in Visual Studio Code:
 1. Open the repo folder.
 2. Open a new terminal and enter the following:
 ```
